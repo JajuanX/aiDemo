@@ -1,0 +1,31 @@
+{
+  "name": "autoapi",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@google-cloud/storage": "^1.5.2",
+    "@google-cloud/translate": "^1.1.0",
+    "@google/maps": "^0.4.5",
+    "compose": "^0.1.2",
+    "flickrapi": "^0.6.0",
+    "google-translate": "^2.0.5",
+    "prop-types": "^15.6.0",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-google-map": "^3.1.1",
+    "react-google-maps": "^9.4.5",
+    "react-google-maps-loader": "^4.1.0",
+    "react-image-gallery": "^0.8.7",
+    "react-router-dom": "^4.2.2",
+    "react-scripts": "1.1.0",
+    "react-timeout": "^1.0.1",
+    "speech-to-text": "^0.7.4",
+    "timeout-then": "^1.1.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}

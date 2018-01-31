@@ -1,0 +1,78 @@
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.header {
+  /* This section calls the slideInFromLeft animation we defined above */
+  animation: 1s ease-out 0s 1 slideInFromLeft;
+  padding: 30px;
+}
+@keyframes fadeIN {
+  0% {
+  opacity: 0;
+  }
+}
+@keyframes fadeOut {
+  100% {
+  opacity: 1;
+  }
+}
+
+.fade {
+  animation: 3s ease-in fadeIN;
+}
+
+button {
+  margin-top: 5px;
+  font-size: 1.5rem;
+  border-radius: 10px;
+}
+h1 {
+  text-align: center;
+}
+#line{
+  width: 0;
+  animation: stretch 2s ease-in 1s forwards;
+  animation-direction: alternate;
+}
+#tip{
+  animation: slideIn 2s ease-in 1s backwards;
+  animation-direction: alternate;
+}
+#tip:hover {
+  transition: fill 3s darkorange;
+
+}
+@keyframes stretch {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 460px;
+  }
+
+}
+@keyframes slideIn {
+  0% {
+    transform: translateX(-1070%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+#logo{
+  width: 60%;
+  text-align: center;
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
