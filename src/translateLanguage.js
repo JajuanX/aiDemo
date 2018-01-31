@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import './App.css';
 import SpeechToText from 'speech-to-text';
-import Key from './translator-google.json';
 import languages from './languages.json';
+import Key from './config.json';
 
 const styles = {
   container : {
@@ -41,7 +41,7 @@ class SentimentAnalysis extends Component {
   }
 
   componentWillMount () {
-    fetch('https://translate.yandex.net/api/v1.5/tr.json/getLangs?key=trnsl.1.1.20180130T205249Z.c166df112150374f.99ad47918a957f00c6c07adedab6e402d4b33111&lang=es')
+    fetch(`https://translate.yandex.net/api/v1.5/tr.json/getLangs?key=${Key[3].YANDEX_KEY}&lang=es`)
     .then( res => res.json() )
     .then( analysis => {
       console.log(analysis.dirs)
@@ -60,8 +60,7 @@ sendData = () => {
   let data = {newData}
   let statement = data.newData
   console.log('User says',statement);
-  console.log(Key.private_key_id);
-  fetch('https://translate.yandex.net/api/v1.5/tr.json/translate?key=trnsl.1.1.20180130T205249Z.c166df112150374f.99ad47918a957f00c6c07adedab6e402d4b33111&lang=es',
+  fetch(`https://translate.yandex.net/api/v1.5/tr.json/translate?key=${Key[3].YANDEX_KEY}&lang=es`,
       {
         method: "POST",
         headers: {"content-type": "application/x-www-form-urlencoded"},

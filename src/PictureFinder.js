@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import './App.css';
 import SpeechToText from 'speech-to-text';
 import ImageGallery from 'react-image-gallery';
-import Map from './translation.js'
+import Key from './config.json';
 
 const styles = {
   container : {
@@ -54,7 +54,7 @@ class FlickrApi extends Component {
   componentWillMount () {
 }
 sendData = () => {
-  fetch(`https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=cc4d14d027f058faf001552a7822308e&text=${this.state.newData}&format=json&nojsoncallback=1`)
+  fetch(`https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=${Key[2].FLICKR_KEY}&text=${this.state.newData}&format=json&nojsoncallback=1`)
   .then( res => res.json() )
   .then( analysis => {
     console.log(analysis);
@@ -126,7 +126,6 @@ return(
               return <div className="images"><img height="208px" width="216px" src={`https://farm${photo.farm}.staticflickr.com/${photo.server}/${photo.id}_${photo.secret}.jpg`} key={index} alt={photo.id}></img></div>
             })}
           </div>
-          <Map />
         </div>
 
       )

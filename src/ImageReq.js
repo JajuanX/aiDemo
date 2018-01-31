@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import './App.css';
+import Key from './config.json'
+
 
 const styles = {
   container : {
@@ -47,7 +49,7 @@ sendData = () => {
       {
         method: "POST",
         headers: {"content-type": "image/imagerecognition"},
-        body: JSON.stringify({'api_key': "35bb681e6e1014958d47f3c4a796a647",
+        body: JSON.stringify({'api_key': `${Key[0].INDICO_KEY}`,
                                  'data': `${statement}`,
                                  'threshold': 0.01
                                })

@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import './App.css';
 import SpeechToText from 'speech-to-text';
+import Key from './config.json'
 
 const styles = {
   container : {
@@ -49,7 +50,7 @@ sendData = () => {
       {
         method: "POST",
         headers: {"content-type": "application/json"},
-        body: JSON.stringify({'api_key': "35bb681e6e1014958d47f3c4a796a647",
+        body: JSON.stringify({'api_key': `${Key[0].INDICO_KEY}`,
                                  'data': `"${statement}"`})
       })
       .then( res => res.json() )

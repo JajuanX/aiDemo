@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import './App.css';
 import SpeechToText from 'speech-to-text';
 import ImageGallery from 'react-image-gallery';
+import Key from './config.json'
 
 const styles = {
   container : {
@@ -35,15 +36,6 @@ const styles = {
     margin: '0 auto',
   }
 }
-// const flickr = new Flickr({
-//   api_key: "cc4d14d027f058faf001552a7822308e"
-// });
-// flickr.photos.search({
-//   text: "red+panda"
-// }, function(err, result) {
-//   if(err) { throw new Error(err); }
-//   // do something with result
-// }
 
 class GiphyApi extends Component {
   state = {
@@ -57,10 +49,9 @@ class GiphyApi extends Component {
   }
 
   componentWillMount () {
-
 }
 sendData = () => {
-  fetch(`http://api.giphy.com/v1/gifs/search?q=${this.state.newData}&api_key=ANABqRo1kEKy8Qbgx3EJsXqv3REIq4QP&limit=10`)
+  fetch(`http://api.giphy.com/v1/gifs/search?q=${this.state.newData}&api_key=${Key[1].GIPHY_KEY}&limit=10`)
   .then( res => res.json() )
   .then( analysis => {
     console.log("Trying to find photos",analysis.data[0].images.original.url);

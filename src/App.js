@@ -11,7 +11,6 @@ import Politics from './Politics.js';
 import Giphy from './Giphy.js';
 import Pictures from './PictureFinder.js';
 import StockAnalysis from './StockAnalysis.js';
-import Translator from './translation.js';
 import Translate from './translateLanguage.js';
 
 class App extends Component {
@@ -26,7 +25,6 @@ class App extends Component {
             <Route path='/picturefinder' component={Pictures} />
             <Route path='/giphy' component={Giphy} />
             <Route path='/stockanalysis' component={StockAnalysis} />
-            <Route path='/translator' component={Translator} />
             <Route path='/translate' component={Translate} />
 
           </div>
